@@ -44,7 +44,6 @@ function Navbar() {
     >
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex items-center justify-between px-3 py-2 bg-white/80 backdrop-blur-lg rounded-xl shadow-lg sm:px-4 md:px-6 sm:rounded-2xl">
-          {/* Left Section - Shop Now Button */}
           <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
             <a
               onClick={() => {
@@ -61,7 +60,6 @@ function Navbar() {
             </a>
           </div>
 
-          {/* Center Section - Logo */}
           <div className="flex items-center absolute left-1/2 -translate-x-1/2">
             <Link to="/">
               <img 
@@ -72,7 +70,6 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* Right Section - Cart & User */}
           <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
             <button className="relative">
               <Link to="/cart">

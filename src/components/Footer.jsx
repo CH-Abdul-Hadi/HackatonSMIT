@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   useEffect(() => {
-    // Animate footer section
+   
     gsap.fromTo(
       ".footer-container",
       { opacity: 0, y: 80 },
@@ -24,7 +24,7 @@ const Footer = () => {
       }
     );
 
-    // Animate each inner column with stagger
+  
     gsap.fromTo(
       ".footer-item",
       { opacity: 0, y: 40 },
@@ -50,7 +50,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-gray-300 py-12 relative top-10 footer-container">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
 
-        {/* Logo & Description */}
+       
         <div className="footer-item">
           <div className="flex items-center gap-3 mb-4">
             <img src="/logo.png" alt="Logo" className=" h-14 object-contain" />
@@ -61,7 +61,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Customer Service */}
         <div className="footer-item">
           <h3 className="text-lg font-semibold text-white mb-3">Customer Service</h3>
           <ul className="space-y-2 text-sm text-gray-400">
@@ -72,7 +71,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact & Social Links */}
         <div className="footer-item">
           <h3 className="text-lg font-semibold text-white mb-3">Get In Touch</h3>
           <p className="text-sm text-gray-400">Email: support@nexusstore.com</p>
@@ -87,7 +85,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Divider */}
       <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} Drip Zone. All rights reserved.
       </div>

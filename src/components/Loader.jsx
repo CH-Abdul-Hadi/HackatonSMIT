@@ -48,7 +48,6 @@ const StyledWrapper = styled.div`
     left: 0;
     height: 20px;
     width: 20px;
-    // border-radius: 50%;
     background: #2697f3;
     box-shadow: 0px 420px 0 400px #2697f3;
     animation: animate_2 2.5s ease-in-out infinite;

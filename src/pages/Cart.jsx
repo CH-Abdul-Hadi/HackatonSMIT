@@ -60,13 +60,10 @@ const Cart = () => {
       return;
     }
 
-    // Simulate submit process (UI only) — you can replace with real API call
     setSubmitting(true);
 
-    // Immediately clear cart so user doesn't accidentally repurchase while waiting
     clearCart();
 
-    // small artificial delay to show spinner & then success
     setTimeout(() => {
       setSubmitting(false);
       setSuccess(true);
@@ -178,7 +175,6 @@ const Cart = () => {
         )}
       </div>
 
-      {/* Checkout Modal */}
       {showModal && (
         <div className="fixed inset-0 flex items-start justify-center z-50">
           {/* backdrop */}
@@ -187,7 +183,6 @@ const Cart = () => {
             onClick={closeModal}
           ></div>
 
-          {/* modal panel */}
           <div className="relative bg-white rounded-xl shadow-lg p-6 mt-8 w-full max-w-lg transform animate-slideDown z-10">
             {/* Close X */}
             <button

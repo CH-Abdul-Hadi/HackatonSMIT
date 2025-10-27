@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const containerRef = useRef(null); // 👈 container for ScrollTrigger animations
+  const containerRef = useRef(null); 
 
   useEffect(() => {
     axios
@@ -19,7 +19,6 @@ const Products = () => {
 
   useEffect(() => {
     if (products.length > 0) {
-      // wait a moment for all cards to mount
       setTimeout(() => {
         const cards = gsap.utils.toArray(".product-card");
 
@@ -35,7 +34,7 @@ const Products = () => {
             ease: "power3.out",
             scrollTrigger: {
               trigger: containerRef.current,
-              start: "top 80%", // start animating when section enters view
+              start: "top 80%", 
               end: "bottom 20%",
               toggleActions: "play none none reverse",
             },

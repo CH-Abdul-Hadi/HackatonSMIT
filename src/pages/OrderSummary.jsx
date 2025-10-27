@@ -53,7 +53,6 @@ const OrderSummary = () => {
   return (
     <div className="min-h-screen relative left-3 top-20 w-[82rem] py-12 px-4 flex justify-center rounded-xl bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950  transition-colors">
       <div className="bg-white rounded-2xl shadow-lg max-w-5xl w-full flex flex-col md:flex-row overflow-hidden">
-        {/* Product Image */}
         <div className="flex justify-center items-center bg-gray-100 md:w-1/2 p-6">
           <img
             src={product.image}

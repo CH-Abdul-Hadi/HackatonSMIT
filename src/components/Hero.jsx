@@ -9,12 +9,9 @@ const Hero = () => {
   const bgGlowRef = useRef(null);
 
   useEffect(() => {
-    // Debug: Check if refs are attached
-    console.log("Button ref:", buttonRef.current);
-    console.log("Heading ref:", headingRef.current);
+  
     
     const ctx = gsap.context(() => {
-      // Background glow fade-in and subtle pulse
       if (bgGlowRef.current) {
         gsap.fromTo(
           bgGlowRef.current,
@@ -32,7 +29,6 @@ const Hero = () => {
         });
       }
 
-      // Text + Button animations
       const tl = gsap.timeline({ delay: 0.5 });
 
       if (headingRef.current) {
@@ -77,7 +73,6 @@ const Hero = () => {
     <section ref={heroRef} className="px-2 sm:px-4 md:px-6">
       <div className="relative top-26 rounded-xl flex flex-col items-center justify-center min-h-[80vh] w-full max-w-[82rem] mx-auto overflow-hidden bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 transition-colors">
 
-        {/* Glow Background */}
         <div
           ref={bgGlowRef}
           className="absolute bg-gradient-to-r from-blue-500/20 to-blue-700/30 rounded-[50px] blur-2xl hidden sm:block -z-10"
@@ -90,7 +85,6 @@ const Hero = () => {
           }}
         />
 
-        {/* Hero Content */}
         <div className="relative z-20 text-center px-4 sm:px-6 md:px-8">
           <h1
             ref={headingRef}
