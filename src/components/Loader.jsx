@@ -20,7 +20,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #f4f7fb;
+  background: #070D1A;
 
   .loader {
     display: flex;
