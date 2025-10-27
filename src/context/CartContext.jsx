@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
       if (existingItem) {
         return prev.map((item) =>
           item.productId === product.productId
-            ? { ...item, count: item.count + 1 }
+            ? { ...item, count: (item.count || 0) + 1 }
             : item
         );
       } else {
@@ -21,27 +21,26 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (productId) => {
+    setCartItems((prev) => prev.filter((item) => item.productId !== productId));
+  };
+
+  const decreaseFromCart = (productId) => {
     setCartItems((prev) =>
-      prev.filter((item) => item.productId !== productId)
+      prev
+        .map((item) =>
+          item.productId === productId
+            ? { ...item, count: Math.max((item.count || 1) - 1, 0) }
+            : item
+        )
+        .filter((item) => (item.count || 0) > 0)
     );
   };
-  const decreaseFromCart = (productId) => {
-  setCartItems((prev) =>
-    prev
-      .map((item) =>
-        item.productId === productId
-          ? { ...item, count: item.count - 1 }
-          : item
-      )
-      .filter((item) => item.count > 0)
-  );
-};
 
   const clearCart = () => setCartItems([]);
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, clearCart }}
+      value={{ cartItems, addToCart, removeFromCart, decreaseFromCart, clearCart }}
     >
       {children}
     </CartContext.Provider>
